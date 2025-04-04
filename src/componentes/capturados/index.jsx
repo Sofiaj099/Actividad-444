@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
-import './App.css'
+import './style.css'
 
-function Capturado() {
+function Capturados() {
 
 
   return (
@@ -13,4 +13,4 @@ function Capturado() {
   )
 }
 
-export default Capturado
+export default Capturados

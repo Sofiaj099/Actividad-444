@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
-import './App.css'
+import './style.css'
 
-function Aleatorio() {
+function Aleatorios() {
 
 
   return (
@@ -13,4 +13,4 @@ function Aleatorio() {
   )
 }
 
-export default Aleatorio
+export default Aleatorios
