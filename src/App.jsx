@@ -26,7 +26,7 @@ function App() {
       <Route path= "/Aleatorios" element={<Aleatorios/>}/>
       <Route path= "/Capturados" element={<Capturados/>}/>
       <Route path= "/Usuarios" element={<Usuarios/>}/>
-      <Route path= "/Pokemon" element={<Pokemon/>}/>
+      <Route path= "/Pokemon/:name" element={<Pokemon/>}/>
       </Routes>
     </Router>
   )
