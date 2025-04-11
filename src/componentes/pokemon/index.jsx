@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-
 import './style.css'
 import { useParams } from "react-router-dom";
 
@@ -7,6 +6,8 @@ import { useParams } from "react-router-dom";
 function Pokemon() {
   const{ name } = useParams();
   const [datapoke, setDatapoke] = useState([]);
+  const [favoritos, setFavoritos] = useState([]);
+  const esFavorito = favoritos.some(p => p.id === datapoke.id);
 
 
   useEffect(() => {
@@ -15,6 +16,14 @@ function Pokemon() {
       .then(responseData => setDatapoke(responseData))
       .catch(error => console.error("Error:", error));
   }, [name]); 
+
+  const toggleFavorito = () => {
+    if (esFavorito) {
+      setFavoritos(favoritos.filter(p => p.id !== datapoke.id));
+    } else {
+      setFavoritos([...favoritos, { id: datapoke.id, nombre: datapoke.name }]);
+    }
+  };
 
   return (
     <>
@@ -28,7 +37,11 @@ function Pokemon() {
         <p>{datapoke.name}</p>
         <p>{datapoke.id}</p>
         <p>Altura: {datapoke.height/ 10} m / Peso: {datapoke.weight/ 10} km</p>
-        
+
+        <button onClick={toggleFavorito}>
+          {esFavorito ? '❤️' : '🤍'}
+        </button>
+
         </div>
     
     </>
