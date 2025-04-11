@@ -9,7 +9,6 @@ function Pokemon() {
   const [favoritos, setFavoritos] = useState([]);
   const esFavorito = favoritos.some(p => p.id === datapoke.id);
 
-
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
       .then(response => response.json())
